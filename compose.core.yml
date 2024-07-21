@@ -1,0 +1,15 @@
+services:
+  server:
+    container_name: bisky-server
+    build: 
+      context: ./server
+      dockerfile: server.Dockerfile
+      target: server
+    command: "/bin/bash"
+    stdin_open: true
+    tty: true
+    # command: "uvicorn ring.fast:app --proxy-headers"
+    volumes:
+      - ./server:/src
+    # environment:
+    #   - PYTHONPATH=.
