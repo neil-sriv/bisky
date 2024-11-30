@@ -67,7 +67,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "atproto", specifier = ">=0.0.55" },
+    { name = "atproto" },
     { name = "click" },
     { name = "ipython" },
     { name = "ipython-autoimport" },
