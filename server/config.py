@@ -18,8 +18,8 @@ class RingConfig(BaseSettings):
     root_path: str = "/api/v1"
     # BUCKET_NAME: str = "rings3files"
     # BACKEND_CORS_ORIGINS: Annotated[
-        # list[AnyUrl] | str,
-        # BeforeValidator(parse_cors),
+    # list[AnyUrl] | str,
+    # BeforeValidator(parse_cors),
     # ] = []
 
 

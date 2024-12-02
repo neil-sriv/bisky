@@ -1,7 +1,7 @@
 from typing import Any, Callable, Iterator, TypeVar
 
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session, sessionmaker, DeclarativeBase
+from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
 from server.config import get_config
 
