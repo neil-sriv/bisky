@@ -1,10 +1,12 @@
 from fastapi import FastAPI
 
+from server.config import get_config
+
 # from starlette.middleware.cors import CORSMiddleware
 
-# ring_config = get_config()
-# app = FastAPI(root_path=ring_config.root_path)
-app = FastAPI()
+ring_config = get_config()
+app = FastAPI(root_path=ring_config.root_path)
+
 
 # if ring_config.BACKEND_CORS_ORIGINS:
 #     app.add_middleware(

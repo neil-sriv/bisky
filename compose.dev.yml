@@ -4,3 +4,5 @@ services:
     volumes:
       - ./server:/src/server
       - ./data/sqlite.db:/sqlite.db
+    env_file:
+      - server/server.env
