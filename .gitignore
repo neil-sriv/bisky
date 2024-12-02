@@ -166,3 +166,5 @@ sql_app.db
 *.pem
 
 .DS_STORE
+
+*.db

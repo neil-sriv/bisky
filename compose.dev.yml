@@ -1,12 +1,6 @@
 services:
   fastapi_server:
     command: "uv run uvicorn server.fast:app --log-level debug --proxy-headers --host 0.0.0.0 --port 8004 --reload"
-
-    # sqlite db
-  db:
-    container_name: bisky-db
-    image: keinos/sqlite3
     volumes:
-      - ./data:/var/lib/sqlite3/data
-    environment:
-      - SQLITE_DATABASE=mydatabase.db
+      - ./server:/src/server
+      - ./data/sqlite.db:/sqlite.db
