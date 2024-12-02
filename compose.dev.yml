@@ -1,0 +1,9 @@
+services:
+    # sqlite db
+  db:
+    container_name: bisky-db
+    image: sqlite:latest
+    volumes:
+      - ./data:/var/lib/sqlite3/data
+    environment:
+      - SQLITE_DATABASE=mydatabase.db

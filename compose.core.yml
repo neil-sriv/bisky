@@ -1,15 +1,30 @@
 services:
-  server:
+  # deprecated_atproto_server:
+  #   container_name: bisky-server
+  #   build: 
+  #     context: ./server
+  #     dockerfile: server.Dockerfile
+  #     target: server
+  #   command: "/bin/bash"
+  #   stdin_open: true
+  #   tty: true
+  #   # command: "uvicorn ring.fast:app --proxy-headers"
+  #   volumes:
+  #     - ./server:/src
+  #   # environment:
+  #   #   - PYTHONPATH=.
+
+  fastapi_server:
     container_name: bisky-server
     build: 
       context: ./server
-      dockerfile: server.Dockerfile
-      target: server
-    command: "/bin/bash"
-    stdin_open: true
-    tty: true
-    # command: "uvicorn ring.fast:app --proxy-headers"
+      dockerfile: fastapi.Dockerfile
+      target: fastapi
+    command: "uvicorn ring.fast:app --proxy-headers"
     volumes:
       - ./server:/src
-    # environment:
-    #   - PYTHONPATH=.
+    environment:
+      - PYTHONPATH=.
+    ports:
+      - "8000:8000"
+  

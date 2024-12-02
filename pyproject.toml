@@ -7,7 +7,6 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["."]
-# include = ["ring", "dev_util"]
 namespaces = false
 
 [tool.ruff]
