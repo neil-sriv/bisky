@@ -36,6 +36,7 @@ dependencies = [
     "pydantic>=2.10.2",
     "pydantic-settings>=2.6.1",
     "sqlalchemy>=2.0.36",
+    "pre-commit>=4.0.1",
 ]
 
 [project.scripts]
