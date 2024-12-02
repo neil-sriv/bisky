@@ -1,8 +1,11 @@
 services:
+  fastapi_server:
+    command: "uv run uvicorn server.fast:app --proxy-headers"
+
     # sqlite db
   db:
     container_name: bisky-db
-    image: sqlite:latest
+    image: keinos/sqlite3
     volumes:
       - ./data:/var/lib/sqlite3/data
     environment:

@@ -1,4 +1,4 @@
-FROM python:3.12.1-bullseye as fastapi
+FROM python:3.13-bullseye as fastapi
 
 WORKDIR /src
 
@@ -7,5 +7,8 @@ ENV PYTHONUNBUFFERED 1
 
 RUN pip install --upgrade pip
 RUN pip install uv
-COPY ../pyproject.toml .
-RUN uv pip sync
+
+COPY ./pyproject.toml /src/pyproject.toml
+COPY ./uv.lock /src/uv.lock
+
+RUN uv sync --frozen

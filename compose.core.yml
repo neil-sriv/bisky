@@ -17,12 +17,12 @@ services:
   fastapi_server:
     container_name: bisky-server
     build: 
-      context: ./server
-      dockerfile: fastapi.Dockerfile
+      context: .
+      dockerfile: server/fastapi.Dockerfile
       target: fastapi
-    command: "uvicorn ring.fast:app --proxy-headers"
+    command: "uv run uvicorn server.fast:app --proxy-headers"
     volumes:
-      - ./server:/src
+      - ./server:/src/server
     environment:
       - PYTHONPATH=.
     ports:
