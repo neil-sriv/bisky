@@ -20,11 +20,11 @@ services:
       context: .
       dockerfile: server/fastapi.Dockerfile
       target: fastapi
-    command: "uv run uvicorn server.fast:app --proxy-headers"
+    command: "uv run uvicorn server.fast:app --proxy-headers --host 0.0.0.0 --port 8004"
     volumes:
       - ./server:/src/server
     environment:
       - PYTHONPATH=.
     ports:
-      - "8000:8000"
+      - "8004:8004"
   
